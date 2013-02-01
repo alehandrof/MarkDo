@@ -49,7 +49,7 @@
 					]
 				},
 				{
-					"name": "comment completed.action.markdo",
+					"name": "comment action.markdo completed.action.markdo",
 					// "begin": "^\\s*([-\\+\\*]\\s+)?(\\[[xX]\\]\\s+)",
 					"begin": "\\G(\\[[xX]\\]\\s+)",
 					"captures": {

@@ -104,7 +104,7 @@
 					<key>end</key>
 					<string>(\n|$)</string>
 					<key>name</key>
-					<string>comment completed.action.markdo</string>
+					<string>comment action.markdo completed.action.markdo</string>
 				</dict>
 				<dict>
 					<key>comment</key>
