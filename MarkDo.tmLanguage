@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>mdo</string>
+	</array>
+	<key>name</key>
+	<string>MarkDo</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>^([\s#])*#\s(?=.)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.heading.markdo</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?=\n)</string>
+			<key>name</key>
+			<string>heading.markdo markup.bold markup.heading.markdown meta.function-call</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*([-\+\*]\s+)?(\[[ ]\]\s+)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag punctuation.action.markdo</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag checkbox.action.markdo</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\n|$)</string>
+			<key>name</key>
+			<string>action.markdo</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*([-\+\*]\s+)?(\[[xX]\]\s+)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>comment punctuation.action.markdo</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>comment checkbox.action.markdo</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\n|$)</string>
+			<key>name</key>
+			<string>comment completed.action.markdo</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*([-\+\*]\s+)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag punctuation.listitem.markdo</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\n|$)</string>
+			<key>name</key>
+			<string>listitem</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>text.html.markdown</string>
+		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>inline</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>+2011-11-11 x2012-12-12</string>
+					<key>match</key>
+					<string>(?&lt;=^|\s)(\+|x|\.)([-\d]+)(?=\s|\n|$)</string>
+					<key>name</key>
+					<string>comment meta.tag.markdo</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>#important</string>
+					<key>match</key>
+					<string>(?&lt;=^|\s)(#)\S+</string>
+					<key>name</key>
+					<string>string.quoted.double hash.tag.markdo</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>@work</string>
+					<key>match</key>
+					<string>(?&lt;=^|\s)(@)\S+</string>
+					<key>name</key>
+					<string>entity.other.attribute-name at.tag.markdo</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>scopeName</key>
+	<string>text.html.markdown.do</string>
+</dict>
+</plist>

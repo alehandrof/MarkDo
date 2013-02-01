@@ -1,0 +1,82 @@
+{
+	"name": "MarkDo",
+	"scopeName": "text.html.markdown.do",
+	"fileTypes": ["mdo"],
+	"patterns": [
+		{
+			"name": "heading.markdo markup.bold markup.heading.markdown meta.function-call", // the markdown stuff is there to be able to use SmartMarkdown's folding
+			"begin": "^([\\s#])*#\\s(?=.)",
+			"captures": {
+				"1": { "name": "punctuation.heading.markdo" }
+			},
+			"end": "(?=\\n)",
+			"patterns": [
+				{ "include": "#inline" },
+			]
+		},
+		{
+			"name": "action.markdo",
+			// "begin": "^\\s*([-\\+\\*]\\s+)?(\\[[ xX]\\]\\s+)",
+			"begin": "^\\s*([-\\+\\*]\\s+)?(\\[[ ]\\]\\s+)",
+			"captures": {
+				"1": { "name": "entity.name.tag punctuation.action.markdo" },
+				"2": { "name": "entity.name.tag checkbox.action.markdo" }
+			},
+			// "end": "(?=\\n)",
+			"end": "(\\n|$)",
+			"patterns": [
+				{ "include": "#inline" },
+			]
+		},
+		{
+			"name": "comment completed.action.markdo",
+			"begin": "^\\s*([-\\+\\*]\\s+)?(\\[[xX]\\]\\s+)",
+			"captures": {
+				"1": { "name": "comment punctuation.action.markdo" },
+				"2": { "name": "comment checkbox.action.markdo" }
+			},
+			"end": "(\\n|$)",
+			// "patterns": [
+			// 	{ "include": "#inline" },
+			// ]
+		},
+		{
+			"name": "listitem",
+			"begin": "^\\s*([-\\+\\*]\\s+)",
+			"captures": {
+				"1": { "name": "entity.name.tag punctuation.listitem.markdo" },
+			},
+			"end": "(\\n|$)",
+			"patterns": [
+				{ "include": "#inline" },
+			]
+		},
+		{ "include": "text.html.markdown" }
+	],
+	"repository": {
+		"inline": {
+			"patterns": [
+				/*{
+					"name": "comment tag.structure.markdo",
+					"match": "(?<=^|\\s)(#|@)(added|done|canceled|cancelled)(:[-\\d]+)?(?=\\s|\\n|$)",
+					"comment": "@added:2011-11-11 #done",
+				},*/
+				{
+					"name": "comment meta.tag.markdo",
+					"match": "(?<=^|\\s)(\\+|x|\\.)([-\\d]+)(?=\\s|\\n|$)",
+					"comment": "+2011-11-11 x2012-12-12",
+				},
+				{
+					"name": "string.quoted.double hash.tag.markdo",
+					"match": "(?<=^|\\s)(#)\\S+",
+					"comment": "#important",
+				},
+				{
+					"name": "entity.other.attribute-name at.tag.markdo",
+					"match": "(?<=^|\\s)(@)\\S+",
+					"comment": "@work",
+				},
+			]
+		},
+	},
+}

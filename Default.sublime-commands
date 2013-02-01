@@ -1,0 +1,22 @@
+[
+    {
+        "caption": "MDSH: Getting Things Done (GTD) Dashboard",
+        // "command": "todo", "args": {"open_files_only": true}
+        "command": "todo"
+    },
+
+
+
+
+    {	 "caption": "All: Toggle", "command": "all_toggle" },
+    {	 "caption": "All: All", "command": "all" },
+    {	 "caption": "GTD: Agenda - @vicky ", "command": "all", "args": { "foldstr": "@vicky"  } },
+    {	 "caption": "GTD: Hotlist (View)", "command": "all", "args": { "foldstr": "(H) "  } },
+
+    { "caption": "GTD: [\u271A] Add New Action", "command": "gtd_add" },
+    { "caption": "GTD: Calendared (Toggle)", "command": "set_priority", "args": { "priority": "(C)" } },
+    { "caption": "GTD: [\u2718] Done (Toggle)", "command": "gtd_done" },
+    { "caption": "GTD: Hotlist (Toggle)", "command": "set_priority", "args": { "priority": "(H)" } },
+    { "caption": "GTD: Waiting For (Toggle)", "command": "set_priority", "args": { "priority": "(W)" } },
+    { "caption": "GTD: Sort", "command": "table_sort" }
+]
