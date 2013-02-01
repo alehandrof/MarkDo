@@ -35,62 +35,13 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*([-\+\*]\s+)?(\[[ ]\]\s+)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag punctuation.action.markdo</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag checkbox.action.markdo</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\n|$)</string>
-			<key>name</key>
-			<string>action.markdo</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#inline</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>^\s*([-\+\*]\s+)?(\[[xX]\]\s+)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>comment punctuation.action.markdo</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>comment checkbox.action.markdo</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\n|$)</string>
-			<key>name</key>
-			<string>comment completed.action.markdo</string>
-		</dict>
-		<dict>
-			<key>begin</key>
 			<string>^\s*([-\+\*]\s+)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag punctuation.listitem.markdo</string>
+					<string>entity.name.tag punctuation.bullet.listitem.markdo</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -116,6 +67,45 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>begin</key>
+					<string>\G(\[[ ]\]\s+)</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag checkbox.action.markdo</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\n|$)</string>
+					<key>name</key>
+					<string>action.markdo</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\G(\[[xX]\]\s+)</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment checkbox.action.markdo</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\n|$)</string>
+					<key>name</key>
+					<string>comment completed.action.markdo</string>
+				</dict>
 				<dict>
 					<key>comment</key>
 					<string>+2011-11-11 x2012-12-12</string>

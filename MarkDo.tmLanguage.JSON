@@ -15,36 +15,10 @@
 			]
 		},
 		{
-			"name": "action.markdo",
-			// "begin": "^\\s*([-\\+\\*]\\s+)?(\\[[ xX]\\]\\s+)",
-			"begin": "^\\s*([-\\+\\*]\\s+)?(\\[[ ]\\]\\s+)",
-			"captures": {
-				"1": { "name": "entity.name.tag punctuation.action.markdo" },
-				"2": { "name": "entity.name.tag checkbox.action.markdo" }
-			},
-			// "end": "(?=\\n)",
-			"end": "(\\n|$)",
-			"patterns": [
-				{ "include": "#inline" },
-			]
-		},
-		{
-			"name": "comment completed.action.markdo",
-			"begin": "^\\s*([-\\+\\*]\\s+)?(\\[[xX]\\]\\s+)",
-			"captures": {
-				"1": { "name": "comment punctuation.action.markdo" },
-				"2": { "name": "comment checkbox.action.markdo" }
-			},
-			"end": "(\\n|$)",
-			// "patterns": [
-			// 	{ "include": "#inline" },
-			// ]
-		},
-		{
 			"name": "listitem",
 			"begin": "^\\s*([-\\+\\*]\\s+)",
 			"captures": {
-				"1": { "name": "entity.name.tag punctuation.listitem.markdo" },
+				"1": { "name": "entity.name.tag punctuation.bullet.listitem.markdo" },
 			},
 			"end": "(\\n|$)",
 			"patterns": [
@@ -61,6 +35,31 @@
 					"match": "(?<=^|\\s)(#|@)(added|done|canceled|cancelled)(:[-\\d]+)?(?=\\s|\\n|$)",
 					"comment": "@added:2011-11-11 #done",
 				},*/
+				{
+					"name": "action.markdo",
+					// "begin": "^\\s*([-\\+\\*]\\s+)?(\\[[ ]\\]\\s+)",
+					"begin": "\\G(\\[[ ]\\]\\s+)",
+					"captures": {
+						"1": { "name": "entity.name.tag checkbox.action.markdo" }
+					},
+					// "end": "(?=\\n)",
+					"end": "(\\n|$)",
+					"patterns": [
+						{ "include": "#inline" },
+					]
+				},
+				{
+					"name": "comment completed.action.markdo",
+					// "begin": "^\\s*([-\\+\\*]\\s+)?(\\[[xX]\\]\\s+)",
+					"begin": "\\G(\\[[xX]\\]\\s+)",
+					"captures": {
+						"1": { "name": "comment checkbox.action.markdo" }
+					},
+					"end": "(\\n|$)",
+					// "patterns": [
+					// 	{ "include": "#inline" },
+					// ]
+				},
 				{
 					"name": "comment meta.tag.markdo",
 					"match": "(?<=^|\\s)(\\+|x|\\.)([-\\d]+)(?=\\s|\\n|$)",
