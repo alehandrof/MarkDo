@@ -67,13 +67,36 @@
 				},
 				{
 					"name": "string.quoted.double hash.tag.markdo",
-					"match": "(?<=^|\\s)(#)\\S+",
+					"match": "(?<=^|\\s)(#)[\\w\\d-]+",
 					"comment": "#important",
 				},
 				{
 					"name": "entity.other.attribute-name at.tag.markdo",
-					"match": "(?<=^|\\s)(@)\\S+",
+					"match": "(?<=^|\\s)(@)[\\w\\d-]+",
 					"comment": "@work",
+				},
+				{
+					"name": "meta.function-call link.email.markdo",
+					"match": "([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})",
+					// from http://net.tutsplus.com/tutorials/other/8-regular-expressions-you-should-know/
+					"comment": "you@tube.com"
+				},
+				{
+					"name": "meta.function-call link.url.markdo",
+					"match": "(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w\\.-]*)*\\/?",
+					// from http://net.tutsplus.com/tutorials/other/8-regular-expressions-you-should-know/
+					// - minus support for spaces
+					"comment": "http://youtube.com"
+				},
+				{
+					"name": "markup.bold.markdo",
+					"match": "(\\*\\*|__)(.*?)\\1",
+					"comment": "**bold** or __strong__"
+				},
+				{
+					"name": "markup.italic.markdo",
+					"match": "(\\*|_)(.*?)\\1",
+					"comment": "*italic* or _strong_"
 				},
 			]
 		},

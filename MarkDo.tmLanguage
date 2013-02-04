@@ -102,7 +102,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(\n|$)</string>
+					<string>(?=\n|$)</string>
 					<key>name</key>
 					<string>comment action.markdo completed.action.markdo</string>
 				</dict>
@@ -118,7 +118,7 @@
 					<key>comment</key>
 					<string>#important</string>
 					<key>match</key>
-					<string>(?&lt;=^|\s)(#)\S+</string>
+					<string>(?&lt;=^|\s)(#)[\w\d-]+</string>
 					<key>name</key>
 					<string>string.quoted.double hash.tag.markdo</string>
 				</dict>
@@ -126,9 +126,41 @@
 					<key>comment</key>
 					<string>@work</string>
 					<key>match</key>
-					<string>(?&lt;=^|\s)(@)\S+</string>
+					<string>(?&lt;=^|\s)(@)[\w\d-]+</string>
 					<key>name</key>
 					<string>entity.other.attribute-name at.tag.markdo</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>you@tube.com</string>
+					<key>match</key>
+					<string>([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})</string>
+					<key>name</key>
+					<string>meta.function-call link.email.markdo</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>http://youtube.com</string>
+					<key>match</key>
+					<string>(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?</string>
+					<key>name</key>
+					<string>meta.function-call link.url.markdo</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>**bold** or __strong__</string>
+					<key>match</key>
+					<string>(\*\*|__)(.*?)\1</string>
+					<key>name</key>
+					<string>markup.bold.markdo</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>*italic* or _strong_</string>
+					<key>match</key>
+					<string>(\*|_)(.*?)\1</string>
+					<key>name</key>
+					<string>markup.italic.markdo</string>
 				</dict>
 			</array>
 		</dict>
