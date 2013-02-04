@@ -43,7 +43,7 @@
 						"1": { "name": "entity.name.tag checkbox.action.markdo" }
 					},
 					// "end": "(?=\\n)",
-					"end": "(\\n|$)",
+					"end": "(?=\\n|$)",
 					"patterns": [
 						{ "include": "#inline" },
 					]
@@ -55,7 +55,7 @@
 					"captures": {
 						"1": { "name": "comment checkbox.action.markdo" }
 					},
-					"end": "(\\n|$)",
+					"end": "(?=\\n|$)",
 					// "patterns": [
 					// 	{ "include": "#inline" },
 					// ]
