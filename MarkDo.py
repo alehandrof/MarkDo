@@ -26,7 +26,7 @@ class MarkdoCheckboxCommand(sublime_plugin.TextCommand):
 			checkbox = self.view.substr(scope)
 			# print '>' + checkbox+'<'
 			# if '[ ] ' in checkbox:
-			if re.match('(\[[ xX]\]\s)'P, checkbox):
+			if re.match('(\[[ xX]\]\s)', checkbox):
 				# print 'Check'
 				# checkbox = checkbox.replace('[ ]', '[x]')
 				# self.view.replace(edit, scope, checkbox)
