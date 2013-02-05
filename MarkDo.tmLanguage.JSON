@@ -83,9 +83,10 @@
 				},
 				{
 					"name": "meta.function-call link.url.markdo",
-					"match": "(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w\\.-]*)*\\/?",
+					"match": "(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w\\.-\\?]*)*\\/?",
 					// from http://net.tutsplus.com/tutorials/other/8-regular-expressions-you-should-know/
 					// - minus support for spaces
+					// - plus support for question marks
 					"comment": "http://youtube.com"
 				},
 				{
