@@ -142,7 +142,7 @@
 					<key>comment</key>
 					<string>http://youtube.com</string>
 					<key>match</key>
-					<string>(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.\-\?=&amp;#]*)*\/?</string>
+					<string>(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.\-\?=&amp;#\+]*)*\/?</string>
 					<key>name</key>
 					<string>meta.function-call link.url.markdo</string>
 				</dict>
