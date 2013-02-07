@@ -34,6 +34,12 @@
 			</array>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>^(\s*[_\-\*]\s*){3,}$</string>
+			<key>name</key>
+			<string>meta.separator.markdo</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>^\s*([-\+\*]\s+)</string>
 			<key>captures</key>

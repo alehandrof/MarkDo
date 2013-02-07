@@ -15,6 +15,10 @@
 			]
 		},
 		{
+			"name": "meta.separator.markdo",
+			"match": "^(\\s*[_\\-\\*]\\s*){3,}$"
+		},
+		{
 			"name": "listitem",
 			"begin": "^\\s*([-\\+\\*]\\s+)",
 			"captures": {
