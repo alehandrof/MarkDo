@@ -1,6 +1,10 @@
 [
+    // Stable bindings
 	{ "keys": ["enter"], "command": "markdo_checkbox", "context": [ { "key": "selector", "operator": "equal", "operand": "checkbox.action.markdo" } ] },
 	{ "keys": ["ctrl+k", "ctrl+a"], "command": "markdo_add", "context": [ { "key": "selector", "operator": "equal", "operand": "text.html.markdown.do" } ] },
 	{ "keys": ["ctrl+k", "ctrl+d"], "command": "markdo_complete", "context": [ { "key": "selector", "operator": "equal", "operand": "action.markdo" } ] },
-	{ "keys": ["ctrl+k", "ctrl+t"], "command": "markdo_touch", "context": [ { "key": "selector", "operator": "equal", "operand": "action.markdo" } ] }
+	{ "keys": ["ctrl+k", "ctrl+t"], "command": "markdo_touch", "context": [ { "key": "selector", "operator": "equal", "operand": "action.markdo" } ] },
+
+    // Experimental bindings
+    {    "keys": ["ctrl+'"], "command": "all_toggle", "args": { "foldstr": ""  } },
 ]

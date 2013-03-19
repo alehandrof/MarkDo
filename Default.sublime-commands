@@ -5,9 +5,6 @@
         "command": "todo"
     },
 
-
-
-
     {	 "caption": "All: Toggle", "command": "all_toggle" },
     {	 "caption": "All: All", "command": "all" },
     {	 "caption": "GTD: Agenda - @vicky ", "command": "all", "args": { "foldstr": "@vicky"  } },
