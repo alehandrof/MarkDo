@@ -29,7 +29,10 @@ class AllCommand(sublime_plugin.TextCommand):
 					lastRegion  = region
 			else:
 				if firstRegion:
-					currRegion = firstRegion.cover(lastRegion)
+					# currRegion = firstRegion.cover(lastRegion)
+					currRegion = \
+						sublime.Region(sublime.Region.begin(firstRegion) - 1, \
+						sublime.Region.end(lastRegion) - 1 )
 					regions.append(currRegion)
 					firstRegion = None
 			line += 1
