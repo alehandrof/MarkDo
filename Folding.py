@@ -18,7 +18,7 @@ class AllCommand(sublime_plugin.TextCommand):
 		currRegion = None
 		regions = []
 
-		while line < endline:
+		while line <= endline:
 			region = view.full_line(view.text_point(line, 0))
 			data = view.substr(region)
 			if data.find(foldstr) == -1:
