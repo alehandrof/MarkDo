@@ -31,8 +31,7 @@ class AllCommand(sublime_plugin.TextCommand):
 				if firstRegion:
 					# currRegion = firstRegion.cover(lastRegion)
 					currRegion = \
-						sublime.Region(sublime.Region.begin(firstRegion) - 1, \
-						sublime.Region.end(lastRegion) - 1 )
+						sublime.Region(firstRegion.a - 1, lastRegion.b - 1)
 					regions.append(currRegion)
 					firstRegion = None
 			line += 1
